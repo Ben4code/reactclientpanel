@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Dashboard from './components/layout/Dashboard';
@@ -7,6 +8,8 @@ import store from './store';
 import AppNavbar from './components/layout/AppNavbar'
 
 import './App.css';
+
+require('dotenv').config();
 
 class App extends Component {
   render() {

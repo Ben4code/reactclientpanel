@@ -1,5 +1,10 @@
-import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+// import {compose} from 'redux';
+// import { connect} from 'react-redux';
+// import {firestoreConnect} from 'react-redux-firebase';
+// import PropTypes from 'prop-types'
+
 
 
 class Clients extends Component {
@@ -31,7 +36,7 @@ class Clients extends Component {
             }
         ]
 
-        if(clients){
+        if (clients) {
             return (
                 <div>
                     <div className="row">
@@ -47,17 +52,17 @@ class Clients extends Component {
                                 <th>Email</th>
                                 <th>Balance</th>
                                 <th></th>
-                            </tr>        
-                        </thead>   
+                            </tr>
+                        </thead>
                         <tbody>
-                            {clients.map((client)=>{
-                                return(
+                            {clients.map((client) => {
+                                return (
                                     <tr key={client.id}>
                                         <td>{client.firstName} {client.lastName}</td>
                                         <td>{client.email}</td>
                                         <td>&#8358;{parseFloat(client.balance).toFixed(2)}</td>
                                         <td>
-                                            <Link to={`/client/${client.id}`} className="btn btn-info btn-sm"> 
+                                            <Link to={`/client/${client.id}`} className="btn btn-info btn-sm">
                                                 <i className="fas fa-arrow-circle-right"></i> Details
                                             </Link>
                                         </td>
@@ -68,10 +73,11 @@ class Clients extends Component {
                     </table>
                 </div>
             );
-        }else{
-            return ( <h3>Loading...</h3> )
+        } else {
+            return (<h3>Loading...</h3>)
         }
     }
 }
 
-export default Clients;
+
+export default Clients
